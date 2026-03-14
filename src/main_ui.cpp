@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    MainWindow win(1100, 680, "ksynth");
+    MainWindow win(1100, 680, "ksynth-desktop " KSYNTH_DESKTOP_VERSION);
     g_win = &win;
     win.show(argc, argv);
     Fl::add_handler(global_event_handler);

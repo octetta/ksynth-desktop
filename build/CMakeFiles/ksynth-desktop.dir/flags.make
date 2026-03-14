@@ -3,13 +3,13 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = 
+C_DEFINES = -DKSYNTH_DESKTOP_VERSION=\"1.0.0\"
 
 C_INCLUDES = -I/home/stewartj/book/ks2/src -I/home/stewartj/book/ks2/vendor -I/home/stewartj/book/ks2/vendor/fltk -I/home/stewartj/book/ks2/build/vendor/fltk -I/home/stewartj/book/ks2/build/vendor/fltk/src/.. -I/home/stewartj/book/ks2/vendor/fltk/src/..
 
 C_FLAGS = -std=gnu11 -Wall -Wno-unused-function
 
-CXX_DEFINES = 
+CXX_DEFINES = -DKSYNTH_DESKTOP_VERSION=\"1.0.0\"
 
 CXX_INCLUDES = -I/home/stewartj/book/ks2/src -I/home/stewartj/book/ks2/vendor -I/home/stewartj/book/ks2/vendor/fltk -I/home/stewartj/book/ks2/build/vendor/fltk -I/home/stewartj/book/ks2/build/vendor/fltk/src/.. -I/home/stewartj/book/ks2/vendor/fltk/src/..
 

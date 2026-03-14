@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.16)
-project(ksynth-desktop C CXX)
+project(ksynth-desktop VERSION 1.0.0 LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD   11)
 set(CMAKE_CXX_STANDARD 17)
+
+# Version string available to source code
+add_compile_definitions(KSYNTH_DESKTOP_VERSION="${PROJECT_VERSION}")
 
 # ── platform audio dependencies ──────────────────────────────────────
 if(APPLE)
