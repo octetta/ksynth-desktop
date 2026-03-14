@@ -86,24 +86,10 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stewartj/book/ks2/src/main_ui.cpp -o CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.s
 
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o: /home/stewartj/book/ks2/src/theme.cpp
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o -c /home/stewartj/book/ks2/src/theme.cpp
-
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ksynth-desktop.dir/src/theme.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/stewartj/book/ks2/src/theme.cpp > CMakeFiles/ksynth-desktop.dir/src/theme.cpp.i
-
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ksynth-desktop.dir/src/theme.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stewartj/book/ks2/src/theme.cpp -o CMakeFiles/ksynth-desktop.dir/src/theme.cpp.s
-
 CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o: /home/stewartj/book/ks2/src/ui/MainWindow.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o -c /home/stewartj/book/ks2/src/ui/MainWindow.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.i: cmake_force
@@ -114,10 +100,38 @@ CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stewartj/book/ks2/src/ui/MainWindow.cpp -o CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.s
 
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o: /home/stewartj/book/ks2/src/ui/Splitter.cpp
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o -c /home/stewartj/book/ks2/src/ui/Splitter.cpp
+
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/stewartj/book/ks2/src/ui/Splitter.cpp > CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.i
+
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stewartj/book/ks2/src/ui/Splitter.cpp -o CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.s
+
+CMakeFiles/ksynth-desktop.dir/src/session.c.o: CMakeFiles/ksynth-desktop.dir/flags.make
+CMakeFiles/ksynth-desktop.dir/src/session.c.o: /home/stewartj/book/ks2/src/session.c
+CMakeFiles/ksynth-desktop.dir/src/session.c.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/ksynth-desktop.dir/src/session.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/session.c.o -MF CMakeFiles/ksynth-desktop.dir/src/session.c.o.d -o CMakeFiles/ksynth-desktop.dir/src/session.c.o -c /home/stewartj/book/ks2/src/session.c
+
+CMakeFiles/ksynth-desktop.dir/src/session.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/ksynth-desktop.dir/src/session.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/stewartj/book/ks2/src/session.c > CMakeFiles/ksynth-desktop.dir/src/session.c.i
+
+CMakeFiles/ksynth-desktop.dir/src/session.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/ksynth-desktop.dir/src/session.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/stewartj/book/ks2/src/session.c -o CMakeFiles/ksynth-desktop.dir/src/session.c.s
+
 CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o: /home/stewartj/book/ks2/src/ui/SlotStrip.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o -c /home/stewartj/book/ks2/src/ui/SlotStrip.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/ui/Editor.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o -c /home/stewartj/book/ks2/src/ui/Editor.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o: /home/stewartj/book/ks2/src/ui/Notebook.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o -c /home/stewartj/book/ks2/src/ui/Notebook.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o: /home/stewartj/book/ks2/src/ui/PadGrid.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o -c /home/stewartj/book/ks2/src/ui/PadGrid.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o: /home/stewartj/book/ks2/src/ui/PadWindow.cpp
 CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o -MF CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o.d -o CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o -c /home/stewartj/book/ks2/src/ui/PadWindow.cpp
 
 CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/engine.c.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/engine.c.o: /home/stewartj/book/ks2/src/engine.c
 CMakeFiles/ksynth-desktop.dir/src/engine.c.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/ksynth-desktop.dir/src/engine.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ksynth-desktop.dir/src/engine.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/engine.c.o -MF CMakeFiles/ksynth-desktop.dir/src/engine.c.o.d -o CMakeFiles/ksynth-desktop.dir/src/engine.c.o -c /home/stewartj/book/ks2/src/engine.c
 
 CMakeFiles/ksynth-desktop.dir/src/engine.c.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/ksynth-desktop.dir/src/engine.c.s: cmake_force
 CMakeFiles/ksynth-desktop.dir/src/audio.c.o: CMakeFiles/ksynth-desktop.dir/flags.make
 CMakeFiles/ksynth-desktop.dir/src/audio.c.o: /home/stewartj/book/ks2/src/audio.c
 CMakeFiles/ksynth-desktop.dir/src/audio.c.o: CMakeFiles/ksynth-desktop.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/ksynth-desktop.dir/src/audio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/ksynth-desktop.dir/src/audio.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/ksynth-desktop.dir/src/audio.c.o -MF CMakeFiles/ksynth-desktop.dir/src/audio.c.o.d -o CMakeFiles/ksynth-desktop.dir/src/audio.c.o -c /home/stewartj/book/ks2/src/audio.c
 
 CMakeFiles/ksynth-desktop.dir/src/audio.c.i: cmake_force
@@ -215,8 +229,9 @@ CMakeFiles/ksynth-desktop.dir/src/audio.c.s: cmake_force
 # Object files for target ksynth-desktop
 ksynth__desktop_OBJECTS = \
 "CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o" \
-"CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o" \
 "CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o" \
+"CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o" \
+"CMakeFiles/ksynth-desktop.dir/src/session.c.o" \
 "CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o" \
 "CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o" \
 "CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o" \
@@ -229,8 +244,9 @@ ksynth__desktop_OBJECTS = \
 ksynth__desktop_EXTERNAL_OBJECTS =
 
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o
-ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o
+ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o
+ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/session.c.o
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o
@@ -251,7 +267,7 @@ ksynth-desktop: /usr/lib64/libXrender.so
 ksynth-desktop: /usr/lib64/libXft.so
 ksynth-desktop: /usr/lib64/libfontconfig.so
 ksynth-desktop: CMakeFiles/ksynth-desktop.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ksynth-desktop"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/stewartj/book/ks2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ksynth-desktop"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ksynth-desktop.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,6 +1,5 @@
 #include "SlotStrip.h"
 #include "../engine.h"
-#include "../theme.h"
 #include <FL/fl_draw.H>
 #include <FL/Fl.H>
 #include <cstring>
@@ -15,24 +14,24 @@ public:
         const Slot *s = engine_slots() + idx_;
         bool filled = s->samples != nullptr;
 
-        fl_color(highlight_ ? T.btn : (filled ? T.pad_fill : T.pad));
+        fl_color(highlight_ ? fl_rgb_color(0xe8,0xe8,0xe8) : (filled ? fl_rgb_color(0xd0,0xd8,0xd0) : fl_rgb_color(0xe8,0xe8,0xe8)));
         fl_rectf(x(),y(),w(),h());
-        fl_color(filled ? T.border : T.bg);
+        fl_color(filled ? fl_rgb_color(0xb0,0xb0,0xb0) : fl_rgb_color(0xe8,0xe8,0xe8));
         fl_rect(x(),y(),w(),h());
 
-        fl_color(T.muted); fl_font(FL_COURIER,9);
+        fl_color(fl_rgb_color(0x70,0x70,0x70)); fl_font(FL_COURIER,9);
         char ib[4]; snprintf(ib,sizeof(ib),"%X",idx_);
         fl_draw(ib, x()+3, y()+9);
 
         if (filled) {
-            fl_color(T.accent); fl_font(FL_COURIER,8);
+            fl_color(fl_rgb_color(0x00,0x78,0xd7)); fl_font(FL_COURIER,8);
             char lb[24]; strncpy(lb,s->label,23); lb[23]='\0';
             fl_push_clip(x()+2,y(),w()-4,h());
             fl_draw(lb, x()+2, y()+h()-3);
             fl_pop_clip();
             draw_wave(s->samples, s->len);
         } else {
-            fl_color(T.muted); fl_font(FL_COURIER,12);
+            fl_color(fl_rgb_color(0x70,0x70,0x70)); fl_font(FL_COURIER,12);
             fl_draw("–", x()+w()/2-4, y()+h()/2+4);
         }
     }
@@ -40,18 +39,18 @@ public:
     int handle(int event) override {
         switch(event) {
         case FL_PUSH:
-            if (Fl::event_button()==FL_LEFT_MOUSE)  { highlight_=true; redraw(); return 1; }
+            if (Fl::event_button()==FL_LEFT_MOUSE) {
+                highlight_=true; redraw();
+                strip_->fire_play(idx_);   /* play on mousedown */
+                return 1;
+            }
             if (Fl::event_button()==FL_RIGHT_MOUSE) {
-                /* Use window-relative + window position for correct HiDPI coords */
                 strip_->fire_menu(idx_, Fl::event_x_root(), Fl::event_y_root());
                 return 1;
             }
             return 1;
         case FL_RELEASE:
-            if (Fl::event_button()==FL_LEFT_MOUSE) {
-                highlight_=false; redraw();
-                if (Fl::event_inside(this)) strip_->fire_play(idx_);
-            }
+            if (Fl::event_button()==FL_LEFT_MOUSE) { highlight_=false; redraw(); }
             return 1;
         case FL_ENTER: return 1;
         case FL_LEAVE: highlight_=false; redraw(); return 1;
@@ -76,7 +75,7 @@ private:
         int wx=x()+1, wy=y()+11, ww=w()-2, wh=h()-20;
         if (ww<=0||wh<=0) return;
         int cy=wy+wh/2;
-        fl_color(T.wave); fl_line_style(FL_SOLID,1);
+        fl_color(fl_rgb_color(0x00,0x78,0xd7)); fl_line_style(FL_SOLID,1);
         int prev=cy;
         for (int px=0;px<ww;px++) {
             int si=(int)((float)px/(float)ww*(float)len);
@@ -106,7 +105,7 @@ SlotStrip::SlotStrip(int x,int y,int w,int h) : Fl_Group(x,y,w,h) {
 }
 
 void SlotStrip::draw() {
-    fl_color(T.bg); fl_rectf(x(),y(),w(),h());
+    fl_color(fl_rgb_color(0xe8,0xe8,0xe8)); fl_rectf(x(),y(),w(),h());
     draw_children();
 }
 

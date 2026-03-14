@@ -1,6 +1,5 @@
 #include "PadGrid.h"
 #include "../engine.h"
-#include "../theme.h"
 #include <FL/fl_draw.H>
 #include <FL/Fl.H>
 #include <cstdio>
@@ -22,24 +21,24 @@ public:
         int  st    = grid_->pad_semitones(idx_);
 
         /* background */
-        fl_color(lit_ ? T.accent : (filled ? T.pad_fill : T.pad));
+        fl_color(lit_ ? fl_rgb_color(0x00,0x78,0xd7) : (filled ? fl_rgb_color(0xd0,0xd8,0xd0) : fl_rgb_color(0xe8,0xe8,0xe8)));
         fl_rectf(x(), y(), w(), h());
-        fl_color(T.border);
+        fl_color(fl_rgb_color(0xb0,0xb0,0xb0));
         fl_rect(x(), y(), w(), h());
 
         fl_push_clip(x()+1, y()+1, w()-2, h()-2);
 
         /* Slot hex — top centre, large */
         fl_font(FL_COURIER_BOLD, 16);
-        fl_color(lit_ ? T.bg : (filled ? T.accent : T.muted));
+        fl_color(lit_ ? fl_rgb_color(0xe8,0xe8,0xe8) : (filled ? fl_rgb_color(0x00,0x78,0xd7) : fl_rgb_color(0x70,0x70,0x70)));
         char sb[4]; snprintf(sb, sizeof(sb), "%X", si);
         fl_draw(sb, x(), y()+2, w(), h()/2, FL_ALIGN_CENTER);
 
         /* Key hint — top left, small */
         fl_font(FL_COURIER, 9);
-        fl_color(T.muted);
+        fl_color(fl_rgb_color(0x70,0x70,0x70));
         char kb[4];
-        if (idx_ < 9)       snprintf(kb, sizeof(kb), "%d", idx_+1);
+        if (idx_ < 9)       { kb[0] = (char)('1' + idx_); kb[1] = 0; }
         else if (idx_ == 9) snprintf(kb, sizeof(kb), "0");
         else                snprintf(kb, sizeof(kb), "%c", 'a' + idx_ - 10);
         fl_draw(kb, x()+3, y()+3, w()/3, 12, FL_ALIGN_LEFT);
@@ -47,19 +46,19 @@ public:
         if (filled) {
             /* Slot label — centre bottom half */
             fl_font(FL_COURIER, 9);
-            fl_color(T.text);
+            fl_color(fl_rgb_color(0x18,0x18,0x18));
             const char *lbl = slots[si].label;
             fl_draw(lbl, x()+2, y()+h()/2, w()-4, h()/2-14, FL_ALIGN_CENTER);
 
             /* Semitone — bottom right, "+Nst" format */
             fl_font(FL_COURIER, 8);
-            fl_color(st != 0 ? T.accent : T.muted);
+            fl_color(st != 0 ? fl_rgb_color(0x00,0x78,0xd7) : fl_rgb_color(0x70,0x70,0x70));
             char stb[12]; snprintf(stb, sizeof(stb), "%+dst", st);
             fl_draw(stb, x(), y()+h()-13, w()-3, 12, FL_ALIGN_RIGHT);
         } else {
             /* Empty dash — centre */
             fl_font(FL_COURIER, 14);
-            fl_color(T.muted);
+            fl_color(fl_rgb_color(0x70,0x70,0x70));
             fl_draw("—", x(), y()+h()/2, w(), h()/2, FL_ALIGN_CENTER);
         }
 
@@ -117,7 +116,7 @@ PadGrid::PadGrid(int x,int y,int w,int h) : Fl_Group(x,y,w,h) {
 }
 
 void PadGrid::draw() {
-    fl_color(T.bg); fl_rectf(x(),y(),w(),h());
+    fl_color(fl_rgb_color(0xe8,0xe8,0xe8)); fl_rectf(x(),y(),w(),h());
     draw_children();
 }
 

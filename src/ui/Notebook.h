@@ -23,6 +23,7 @@ public:
     Notebook(int x, int y, int w, int h);
 
     void draw() override;
+    void resize(int x, int y, int w, int h) override;
 
     void add_entry(const NotebookEntry &entry);
     void remove_cell(NbCell *cell);   /* called by NbCell delete button */

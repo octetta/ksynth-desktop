@@ -354,29 +354,29 @@ src/main_ui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.s
 .PHONY : src/main_ui.cpp.s
 
-src/theme.o: src/theme.cpp.o
-.PHONY : src/theme.o
+src/session.o: src/session.c.o
+.PHONY : src/session.o
 
 # target to build an object file
-src/theme.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o
-.PHONY : src/theme.cpp.o
+src/session.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/session.c.o
+.PHONY : src/session.c.o
 
-src/theme.i: src/theme.cpp.i
-.PHONY : src/theme.i
+src/session.i: src/session.c.i
+.PHONY : src/session.i
 
 # target to preprocess a source file
-src/theme.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/theme.cpp.i
-.PHONY : src/theme.cpp.i
+src/session.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/session.c.i
+.PHONY : src/session.c.i
 
-src/theme.s: src/theme.cpp.s
-.PHONY : src/theme.s
+src/session.s: src/session.c.s
+.PHONY : src/session.s
 
 # target to generate assembly for a file
-src/theme.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/theme.cpp.s
-.PHONY : src/theme.cpp.s
+src/session.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/session.c.s
+.PHONY : src/session.c.s
 
 src/ui/Editor.o: src/ui/Editor.cpp.o
 .PHONY : src/ui/Editor.o
@@ -522,6 +522,30 @@ src/ui/SlotStrip.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.s
 .PHONY : src/ui/SlotStrip.cpp.s
 
+src/ui/Splitter.o: src/ui/Splitter.cpp.o
+.PHONY : src/ui/Splitter.o
+
+# target to build an object file
+src/ui/Splitter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o
+.PHONY : src/ui/Splitter.cpp.o
+
+src/ui/Splitter.i: src/ui/Splitter.cpp.i
+.PHONY : src/ui/Splitter.i
+
+# target to preprocess a source file
+src/ui/Splitter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.i
+.PHONY : src/ui/Splitter.cpp.i
+
+src/ui/Splitter.s: src/ui/Splitter.cpp.s
+.PHONY : src/ui/Splitter.s
+
+# target to generate assembly for a file
+src/ui/Splitter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ksynth-desktop.dir/build.make CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.s
+.PHONY : src/ui/Splitter.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -553,9 +577,9 @@ help:
 	@echo "... src/main_ui.o"
 	@echo "... src/main_ui.i"
 	@echo "... src/main_ui.s"
-	@echo "... src/theme.o"
-	@echo "... src/theme.i"
-	@echo "... src/theme.s"
+	@echo "... src/session.o"
+	@echo "... src/session.i"
+	@echo "... src/session.s"
 	@echo "... src/ui/Editor.o"
 	@echo "... src/ui/Editor.i"
 	@echo "... src/ui/Editor.s"
@@ -574,6 +598,9 @@ help:
 	@echo "... src/ui/SlotStrip.o"
 	@echo "... src/ui/SlotStrip.i"
 	@echo "... src/ui/SlotStrip.s"
+	@echo "... src/ui/Splitter.o"
+	@echo "... src/ui/Splitter.i"
+	@echo "... src/ui/Splitter.s"
 .PHONY : help
 
 

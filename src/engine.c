@@ -214,3 +214,66 @@ void engine_bank_slot(int slot_idx, const float *samples, int len,
                  "slot%d", slot_idx);
     }
 }
+
+/* REPL evaluation — runs one expression, preserves vars[] between calls */
+int engine_eval_repl(const char *expr, char *out, int out_len) {
+    if (!expr || !*expr) {
+        out[0] = '\0';
+        return 1;
+    }
+
+    char *buf = strdup(expr);
+    if (!buf) { snprintf(out, out_len, "out of memory"); return 0; }
+
+    char *p = buf;
+    /* Skip leading whitespace/newlines */
+    while (*p == '\n' || *p == '\r' || *p == ' ' || *p == '\t') p++;
+
+    if (!*p) { free(buf); out[0] = '\0'; return 1; }
+
+    /* Evaluate — e() advances p past the expression.
+       We do NOT reset vars[] — that's the whole point of the REPL. */
+    K result = e(&p);
+    free(buf);
+
+    if (!result) {
+        snprintf(out, out_len, "nil");
+        return 1;
+    }
+
+    /* Format result — owned by result, we must k_free it after reading */
+    if (result->n == 1) {
+        /* Scalar */
+        snprintf(out, out_len, "%g", result->f[0]);
+    } else if (result->n <= 8) {
+        /* Short vector — show all */
+        int pos = 0;
+        pos += snprintf(out + pos, out_len - pos, "[");
+        for (int i = 0; i < result->n && pos < out_len - 4; i++) {
+            if (i > 0) pos += snprintf(out + pos, out_len - pos, " ");
+            pos += snprintf(out + pos, out_len - pos, "%g", result->f[i]);
+        }
+        snprintf(out + pos, out_len - pos, "]");
+    } else {
+        /* Long vector — show first 6, then count */
+        int pos = 0;
+        pos += snprintf(out + pos, out_len - pos, "[");
+        int show = result->n < 6 ? result->n : 6;
+        for (int i = 0; i < show && pos < out_len - 20; i++) {
+            if (i > 0) pos += snprintf(out + pos, out_len - pos, " ");
+            pos += snprintf(out + pos, out_len - pos, "%g", result->f[i]);
+        }
+        snprintf(out + pos, out_len - pos, " ...]  len=%d", result->n);
+    }
+
+    /* If it was NOT assigned to a variable (expression result), free it.
+       If it WAS assigned (e.g. "n: 44100"), ksynth's e() stores it in
+       vars[] and returns the same pointer — k_free would corrupt vars.
+       We detect this by checking if result == any vars[i]. */
+    int in_vars = 0;
+    for (int i = 0; i < 26; i++)
+        if (vars[i] == result) { in_vars = 1; break; }
+    if (!in_vars) k_free(result);
+
+    return 1;
+}

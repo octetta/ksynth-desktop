@@ -1,6 +1,5 @@
 #include "Notebook.h"
 #include "../engine.h"
-#include "../theme.h"
 #include <FL/fl_draw.H>
 #include <FL/Fl.H>
 #include <FL/Fl_Box.H>
@@ -49,24 +48,24 @@ public:
 
     void draw() override {
         bool ok = success_;
-        fl_color(ok ? T.cell_ok : T.cell_er);
+        fl_color(ok ? fl_rgb_color(0xdc,0xdc,0xdc) : fl_rgb_color(0xf0,0xdc,0xdc));
         fl_rectf(x(), y(), w(), h());
-        fl_color(T.border);
+        fl_color(fl_rgb_color(0xb0,0xb0,0xb0));
         fl_rect(x(), y(), w(), h());
 
-        hdr_->labelcolor(ok ? T.accent : T.error);
-        hdr_->color(ok ? T.cell_ok : T.cell_er);
-        del_btn_->color(ok ? T.cell_ok : T.cell_er);
-        del_btn_->labelcolor(T.muted);
-        code_box_->color(T.code_bg);
-        code_box_->labelcolor(T.text);
-        if (wave_box_) wave_box_->color(T.code_bg);
+        hdr_->labelcolor(ok ? fl_rgb_color(0x00,0x78,0xd7) : fl_rgb_color(0xcc,0x00,0x00));
+        hdr_->color(ok ? fl_rgb_color(0xdc,0xdc,0xdc) : fl_rgb_color(0xf0,0xdc,0xdc));
+        del_btn_->color(ok ? fl_rgb_color(0xdc,0xdc,0xdc) : fl_rgb_color(0xf0,0xdc,0xdc));
+        del_btn_->labelcolor(fl_rgb_color(0x70,0x70,0x70));
+        code_box_->color(fl_rgb_color(0xf4,0xf4,0xf2));
+        code_box_->labelcolor(fl_rgb_color(0x18,0x18,0x18));
+        if (wave_box_) wave_box_->color(fl_rgb_color(0xf4,0xf4,0xf2));
         for (int i = 0; i < children(); i++) {
             Fl_Widget *c = child(i);
             if (c==hdr_||c==del_btn_||c==code_box_||c==wave_box_) continue;
             c->box(FL_FLAT_BOX);
-            c->color(T.btn);
-            c->labelcolor(T.accent);
+            c->color(fl_rgb_color(0xe8,0xe8,0xe8));
+            c->labelcolor(fl_rgb_color(0x00,0x78,0xd7));
         }
 
         draw_children();
@@ -197,7 +196,7 @@ private:
         if (ww <= 0 || wh <= 0 || wave_len_ == 0) return;
         int mid = wy + wh / 2;
         fl_push_clip(wx, wy, ww, wh);
-        fl_color(T.wave); fl_line_style(FL_SOLID, 1);
+        fl_color(fl_rgb_color(0x00,0x78,0xd7)); fl_line_style(FL_SOLID, 1);
         int prev = mid;
         for (int px = 0; px < ww; px++) {
             int si = (int)((float)px / (float)ww * (float)wave_len_);
@@ -234,10 +233,12 @@ Notebook::Notebook(int X, int Y, int W, int H)
 }
 
 void Notebook::draw() {
-    color(T.bg);
-    scrollbar.color(T.btn);
-    scrollbar.selection_color(T.accent);
     Fl_Scroll::draw();
+}
+
+void Notebook::resize(int X, int Y, int W, int H) {
+    Fl_Scroll::resize(X, Y, W, H);
+    relayout();
 }
 
 void Notebook::relayout() {

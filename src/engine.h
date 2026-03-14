@@ -50,6 +50,12 @@ EvalResult engine_eval_scratch(const char *code);
 void engine_bank_slot(int slot_idx, const float *samples, int len,
                       const char *label);
 
+/* REPL evaluation: runs one expression WITHOUT resetting vars[].
+   State (variables a-z) persists between calls.
+   result_str is filled with a human-readable summary of the result.
+   Returns 1 on success, 0 on error (result_str contains error message). */
+int engine_eval_repl(const char *expr, char *result_str, int result_str_len);
+
 #ifdef __cplusplus
 }
 #endif

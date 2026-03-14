@@ -51,8 +51,9 @@ add_subdirectory(vendor/fltk EXCLUDE_FROM_ALL)
 # ── Phase 2+: FLTK UI app ────────────────────────────────────────────
 add_executable(ksynth-desktop
     src/main_ui.cpp
-    src/theme.cpp
     src/ui/MainWindow.cpp
+    src/ui/Splitter.cpp
+    src/session.c
     src/ui/SlotStrip.cpp
     src/ui/Editor.cpp
     src/ui/Notebook.cpp

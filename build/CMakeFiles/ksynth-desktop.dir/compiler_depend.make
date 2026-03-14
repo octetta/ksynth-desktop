@@ -213,6 +213,7 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o: /home/stewartj/book/ks2/src/mai
   /home/stewartj/book/ks2/src/audio.h \
   /home/stewartj/book/ks2/src/engine.h \
   /home/stewartj/book/ks2/src/ui/MainWindow.h \
+  /home/stewartj/book/ks2/src/ui/Splitter.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Bitmap.H \
@@ -331,50 +332,39 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o: /home/stewartj/book/ks2/src/mai
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h
 
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o: /home/stewartj/book/ks2/src/theme.cpp \
-  vendor/fltk/FL/fl_config.h \
-  /home/stewartj/book/ks2/src/theme.h \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Bitmap.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Export.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Group.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Image.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Widget.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Window.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/fl_attr.h \
-  /home/stewartj/book/ks2/vendor/fltk/FL/fl_casts.H \
-  /home/stewartj/book/ks2/vendor/fltk/FL/fl_types.h \
-  /home/stewartj/book/ks2/vendor/fltk/FL/fl_utf8.h \
-  /home/stewartj/book/ks2/vendor/fltk/FL/platform_types.h \
-  /usr/include/asm-generic/bitsperlong.h \
-  /usr/include/asm-generic/int-ll64.h \
-  /usr/include/asm-generic/posix_types.h \
-  /usr/include/asm-generic/types.h \
-  /usr/include/asm/bitsperlong.h \
-  /usr/include/asm/posix_types.h \
-  /usr/include/asm/posix_types_64.h \
-  /usr/include/asm/types.h \
-  /usr/include/bits/dirent.h \
-  /usr/include/bits/dirent_ext.h \
+CMakeFiles/ksynth-desktop.dir/src/session.c.o: /home/stewartj/book/ks2/src/session.c \
+  /home/stewartj/book/ks2/src/engine.h \
+  /home/stewartj/book/ks2/src/session.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/byteswap.h \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
   /usr/include/bits/libc-header-start.h \
-  /usr/include/bits/local_lim.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/long-double.h \
-  /usr/include/bits/posix1_lim.h \
-  /usr/include/bits/pthread_stack_min-dynamic.h \
-  /usr/include/bits/stat.h \
-  /usr/include/bits/statx-generic.h \
-  /usr/include/bits/statx.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/bits/stdint-uintn.h \
   /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/struct_stat.h \
-  /usr/include/bits/time.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/thread-shared-types.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
-  /usr/include/bits/timex.h \
   /usr/include/bits/types.h \
   /usr/include/bits/types/FILE.h \
   /usr/include/bits/types/__FILE.h \
@@ -382,54 +372,58 @@ CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o: /home/stewartj/book/ks2/src/theme
   /usr/include/bits/types/__fpos_t.h \
   /usr/include/bits/types/__locale_t.h \
   /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__sigset_t.h \
   /usr/include/bits/types/clock_t.h \
   /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/cookie_io_functions_t.h \
   /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/sigset_t.h \
   /usr/include/bits/types/struct_FILE.h \
-  /usr/include/bits/types/struct_itimerspec.h \
-  /usr/include/bits/types/struct_statx.h \
-  /usr/include/bits/types/struct_statx_timestamp.h \
   /usr/include/bits/types/struct_timespec.h \
   /usr/include/bits/types/struct_timeval.h \
-  /usr/include/bits/types/struct_tm.h \
   /usr/include/bits/types/time_t.h \
   /usr/include/bits/types/timer_t.h \
   /usr/include/bits/typesizes.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wchar.h \
   /usr/include/bits/wordsize.h \
-  /usr/include/dirent.h \
+  /usr/include/endian.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
-  /usr/include/linux/limits.h \
-  /usr/include/linux/posix_types.h \
-  /usr/include/linux/stat.h \
-  /usr/include/linux/stddef.h \
-  /usr/include/linux/types.h \
+  /usr/include/math.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
-  /usr/include/sys/stat.h \
-  /usr/include/time.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/types.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
-  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h
 
 CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/ui/Editor.cpp \
   vendor/fltk/FL/fl_config.h \
-  /home/stewartj/book/ks2/src/theme.h \
+  /home/stewartj/book/ks2/src/engine.h \
   /home/stewartj/book/ks2/src/ui/Editor.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Bitmap.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Box.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Button.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Device.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Export.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Graphics_Driver.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Group.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Image.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Input.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Input_.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Pixmap.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Plugin.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Preferences.H \
@@ -477,6 +471,8 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/u
   /usr/include/bits/statx-generic.h \
   /usr/include/bits/statx.h \
   /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/bits/stdint-uintn.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/bits/struct_mutex.h \
@@ -513,9 +509,12 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/u
   /usr/include/bits/uintn-identity.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/c++/15/bits/std_abs.h \
+  /usr/include/c++/15/bits/version.h \
   /usr/include/c++/15/cstdlib \
+  /usr/include/c++/15/cstring \
   /usr/include/c++/15/pstl/pstl_config.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/c++config.h \
   /usr/include/c++/15/x86_64-redhat-linux/bits/cpu_defines.h \
@@ -532,6 +531,7 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/u
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdint.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/string.h \
@@ -542,19 +542,21 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o: /home/stewartj/book/ks2/src/u
   /usr/include/sys/types.h \
   /usr/include/time.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
-  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h
 
 CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o: /home/stewartj/book/ks2/src/ui/MainWindow.cpp \
   vendor/fltk/FL/fl_config.h \
   /home/stewartj/book/ks2/src/audio.h \
   /home/stewartj/book/ks2/src/engine.h \
-  /home/stewartj/book/ks2/src/theme.h \
+  /home/stewartj/book/ks2/src/session.h \
   /home/stewartj/book/ks2/src/ui/Editor.h \
   /home/stewartj/book/ks2/src/ui/MainWindow.h \
   /home/stewartj/book/ks2/src/ui/Notebook.h \
   /home/stewartj/book/ks2/src/ui/PadGrid.h \
   /home/stewartj/book/ks2/src/ui/PadWindow.h \
   /home/stewartj/book/ks2/src/ui/SlotStrip.h \
+  /home/stewartj/book/ks2/src/ui/Splitter.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Bitmap.H \
@@ -814,7 +816,6 @@ CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o: /home/stewartj/book/ks2/s
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o: /home/stewartj/book/ks2/src/ui/Notebook.cpp \
   vendor/fltk/FL/fl_config.h \
   /home/stewartj/book/ks2/src/engine.h \
-  /home/stewartj/book/ks2/src/theme.h \
   /home/stewartj/book/ks2/src/ui/Notebook.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
@@ -1031,7 +1032,6 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o: /home/stewartj/book/ks2/src
 CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o: /home/stewartj/book/ks2/src/ui/PadGrid.cpp \
   vendor/fltk/FL/fl_config.h \
   /home/stewartj/book/ks2/src/engine.h \
-  /home/stewartj/book/ks2/src/theme.h \
   /home/stewartj/book/ks2/src/ui/PadGrid.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
@@ -1137,7 +1137,6 @@ CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o: /home/stewartj/book/ks2/src/
 
 CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o: /home/stewartj/book/ks2/src/ui/PadWindow.cpp \
   vendor/fltk/FL/fl_config.h \
-  /home/stewartj/book/ks2/src/theme.h \
   /home/stewartj/book/ks2/src/ui/PadGrid.h \
   /home/stewartj/book/ks2/src/ui/PadWindow.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
@@ -1229,7 +1228,6 @@ CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o: /home/stewartj/book/ks2/sr
 CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o: /home/stewartj/book/ks2/src/ui/SlotStrip.cpp \
   vendor/fltk/FL/fl_config.h \
   /home/stewartj/book/ks2/src/engine.h \
-  /home/stewartj/book/ks2/src/theme.h \
   /home/stewartj/book/ks2/src/ui/SlotStrip.h \
   /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
   /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
@@ -1335,6 +1333,99 @@ CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o: /home/stewartj/book/ks2/sr
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
   /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h
 
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o: /home/stewartj/book/ks2/src/ui/Splitter.cpp \
+  vendor/fltk/FL/fl_config.h \
+  /home/stewartj/book/ks2/src/ui/Splitter.h \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Enumerations.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Bitmap.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Device.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Export.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Graphics_Driver.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Group.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Image.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Pixmap.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Plugin.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Preferences.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_RGB_Image.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Rect.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Widget.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/fl_attr.h \
+  /home/stewartj/book/ks2/vendor/fltk/FL/fl_casts.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/fl_draw.H \
+  /home/stewartj/book/ks2/vendor/fltk/FL/fl_types.h \
+  /home/stewartj/book/ks2/vendor/fltk/FL/fl_utf8.h \
+  /home/stewartj/book/ks2/vendor/fltk/FL/platform_types.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm/types.h \
+  /usr/include/bits/dirent.h \
+  /usr/include/bits/dirent_ext.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/bits/stat.h \
+  /usr/include/bits/statx-generic.h \
+  /usr/include/bits/statx.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/struct_stat.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/types/struct_statx.h \
+  /usr/include/bits/types/struct_statx_timestamp.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/dirent.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/linux/limits.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stat.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/linux/types.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/sys/stat.h \
+  /usr/include/time.h \
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
+  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h
+
 ksynth-desktop: /lib64/ld-linux-x86-64.so.2 \
   /lib64/libc.so.6 \
   /lib64/libgcc_s.so.1 \
@@ -1379,19 +1470,20 @@ ksynth-desktop: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/ksynth-desktop.dir/src/audio.c.o \
   CMakeFiles/ksynth-desktop.dir/src/engine.c.o \
   CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o \
-  CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o \
+  CMakeFiles/ksynth-desktop.dir/src/session.c.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/MainWindow.cpp.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/PadWindow.cpp.o \
   CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o \
+  CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o \
   vendor/fltk/lib/libfltk.a
 
 
 CMakeFiles/ksynth-desktop.dir/src/ui/Notebook.cpp.o:
 
-CMakeFiles/ksynth-desktop.dir/src/theme.cpp.o:
+CMakeFiles/ksynth-desktop.dir/src/session.c.o:
 
 CMakeFiles/ksynth-desktop.dir/src/engine.c.o:
 
@@ -1423,7 +1515,9 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o:
 
 /usr/lib64/libXau.so.6:
 
-/lib64/libgcc_s.so.1:
+/usr/lib64/libX11.so:
+
+/usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so:
 
 /usr/include/bits/timex.h:
 
@@ -1437,7 +1531,7 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/platform_types.h:
 
-/home/stewartj/book/ks2/src/theme.cpp:
+/home/stewartj/book/ks2/src/ui/Splitter.cpp:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/fl_utf8.h:
 
@@ -1479,10 +1573,6 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o:
 
 /usr/include/dirent.h:
 
-/usr/include/c++/15/bits/version.h:
-
-/usr/include/linux/stddef.h:
-
 /usr/include/c++/15/string_view:
 
 /usr/include/sys/time.h:
@@ -1521,6 +1611,8 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o:
 
 /usr/include/poll.h:
 
+/home/stewartj/book/ks2/src/ui/Splitter.h:
+
 /usr/include/math.h:
 
 /usr/include/c++/15/ext/type_traits.h:
@@ -1544,6 +1636,8 @@ CMakeFiles/ksynth-desktop.dir/src/main_ui.cpp.o:
 /usr/include/c++/15/bits/string_view.tcc:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Export.H:
+
+/home/stewartj/book/ks2/src/session.c:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Browser_.H:
 
@@ -1661,6 +1755,8 @@ vendor/fltk/lib/libfltk.a:
 
 /usr/include/c++/15/limits:
 
+CMakeFiles/ksynth-desktop.dir/src/ui/Splitter.cpp.o:
+
 /usr/include/bits/types/FILE.h:
 
 /usr/include/bits/types/__fpos64_t.h:
@@ -1725,11 +1821,7 @@ vendor/fltk/lib/libfltk.a:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Box.H:
 
-/usr/lib64/libX11.so:
-
 /usr/include/bits/sched.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so:
 
 /usr/include/bits/byteswap.h:
 
@@ -1793,8 +1885,6 @@ CMakeFiles/ksynth-desktop.dir/src/ui/Editor.cpp.o:
 
 /usr/include/linux/types.h:
 
-/usr/include/c++/15/cstddef:
-
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/posix2_lim.h:
@@ -1833,6 +1923,12 @@ CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o:
 
 /usr/include/bits/time.h:
 
+/usr/include/linux/stddef.h:
+
+/usr/include/c++/15/bits/version.h:
+
+/lib64/libgcc_s.so.1:
+
 /usr/include/c++/15/cstdio:
 
 /usr/include/c++/15/cstdlib:
@@ -1859,11 +1955,11 @@ CMakeFiles/ksynth-desktop.dir/src/ui/SlotStrip.cpp.o:
 
 /usr/include/linux/stat.h:
 
-/home/stewartj/book/ks2/src/theme.h:
+/usr/include/c++/15/cstddef:
 
-/usr/include/sys/poll.h:
+/home/stewartj/book/ks2/src/session.h:
 
-/usr/include/c++/15/bits/specfun.h:
+/home/stewartj/book/ks2/vendor/fltk/FL/Fl_Plugin.H:
 
 /home/stewartj/book/ks2/src/ui/Editor.cpp:
 
@@ -1883,7 +1979,7 @@ vendor/fltk/FL/fl_config.h:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Graphics_Driver.H:
 
-/home/stewartj/book/ks2/vendor/fltk/FL/Fl_Plugin.H:
+/home/stewartj/book/ks2/vendor/fltk/FL/Fl_Input_.H:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_RGB_Image.H:
 
@@ -1926,8 +2022,6 @@ vendor/fltk/FL/fl_config.h:
 /usr/include/bits/local_lim.h:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_File_Input.H:
-
-/home/stewartj/book/ks2/vendor/fltk/FL/Fl_Input_.H:
 
 /home/stewartj/book/ks2/vendor/fltk/FL/Fl_Menu_Bar.H:
 
@@ -2000,6 +2094,10 @@ CMakeFiles/ksynth-desktop.dir/src/ui/PadGrid.cpp.o:
 /usr/include/c++/15/bits/predefined_ops.h:
 
 /usr/include/c++/15/bits/refwrap.h:
+
+/usr/include/sys/poll.h:
+
+/usr/include/c++/15/bits/specfun.h:
 
 /usr/include/c++/15/bits/uses_allocator_args.h:
 

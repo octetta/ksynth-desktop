@@ -5,12 +5,12 @@
 #include "PadWindow.h"
 #include "PadGrid.h"
 #include "../engine.h"
-#include "../theme.h"
+#include "../session.h"
 #include "../audio.h"
 #include <FL/fl_ask.H>
 #include <FL/Fl_File_Chooser.H>
 #include <FL/Fl_Menu_Bar.H>
-#include <FL/Fl_Tile.H>
+#include "Splitter.h"
 #include <FL/fl_draw.H>
 #include <FL/Fl.H>
 #include <cstdio>
@@ -29,8 +29,10 @@ MainWindow::MainWindow(int w, int h, const char *title)
 
     Fl_Menu_Bar *menu = new Fl_Menu_Bar(0, my, w, MENUBAR_H);
     menu->textfont(FL_COURIER); menu->textsize(11);
-    menu->add("File/Open .ks...\\t^o", 0, menu_open_cb, this);
-    menu->add("File/Quit\\t^q",        0, menu_quit_cb, this);
+    menu->add("File/Open .ks...\\t^o",     0, menu_open_cb,         this);
+    menu->add("File/Save session...\\t^s", 0, menu_save_session_cb, this);
+    menu->add("File/Load session...",      0, menu_load_session_cb, this, FL_MENU_DIVIDER);
+    menu->add("File/Quit\\t^q",            0, menu_quit_cb,         this);
     my += MENUBAR_H;
 
     strip_ = new SlotStrip(0, my, w, STRIP_H);
@@ -39,8 +41,7 @@ MainWindow::MainWindow(int w, int h, const char *title)
     int main_h = h - my;
     int nb_w   = w / 2;
 
-    /* Fl_Tile allows dragging the divider between notebook and editor */
-    tile_ = new Fl_Tile(0, my, w, main_h);
+    tile_ = new Splitter(0, my, w, main_h);
     notebook_ = new Notebook(0,    my, nb_w,   main_h);
     editor_   = new Editor  (nb_w, my, w-nb_w, main_h);
     tile_->end();
@@ -51,7 +52,6 @@ MainWindow::MainWindow(int w, int h, const char *title)
     pad_win_ = new PadWindow();
 
     setup_callbacks();
-    theme_set(0);
 }
 
 /* ── wiring ─────────────────────────────────────────────────────────── */
@@ -68,7 +68,6 @@ void MainWindow::setup_callbacks() {
         ((MainWindow*)ud)->on_run(code);
     }, this);
     editor_->set_pads_cb(btn_pads_cb, this);
-    editor_->set_theme_cb(btn_theme_cb, this);
 
     notebook_->on_copy_to([](const char *code, void *ud){
         ((MainWindow*)ud)->on_copy_to_editor(code);
@@ -132,10 +131,6 @@ void MainWindow::on_pad_menu(int pad_idx, int x, int y) {
     ctx_pad_ = pad_idx; show_pad_menu(x, y);
 }
 
-void MainWindow::cycle_theme() {
-    theme_ = (theme_ + 1) % 3;
-    theme_set(theme_);
-}
 
 /* ── keyboard ───────────────────────────────────────────────────────── */
 
@@ -264,6 +259,50 @@ void MainWindow::load_ks_file(const char *path) {
 
 /* ── static callbacks ────────────────────────────────────────────────── */
 void MainWindow::btn_pads_cb(Fl_Widget*,void*ud)  { ((MainWindow*)ud)->pad_win_->toggle(); }
-void MainWindow::btn_theme_cb(Fl_Widget*,void*ud) { ((MainWindow*)ud)->cycle_theme(); }
 void MainWindow::menu_open_cb(Fl_Widget*,void*ud) { ((MainWindow*)ud)->load_ks_file(nullptr); }
 void MainWindow::menu_quit_cb(Fl_Widget*,void*)   { exit(0); }
+
+/* ── session save/load ─────────────────────────────────────────────── */
+
+void MainWindow::save_session() {
+    const char *path = fl_file_chooser("Save session", "*.json", "ksynth-session.json");
+    if (!path) return;
+
+    char out[512]; strncpy(out, path, sizeof(out)-6); out[sizeof(out)-6] = '\0';
+    if (!strstr(out, ".json")) strcat(out, ".json");
+
+    /* Collect pad config from pad window */
+    int pad_slots[16], pad_st[16];
+    PadGrid *g = pad_win_->grid();
+    for (int i = 0; i < 16; i++) {
+        pad_slots[i] = g->pad_slot(i);
+        pad_st[i]    = g->pad_semitones(i);
+    }
+
+    if (session_save(out, pad_slots, pad_st, 16) != 0)
+        fl_alert("Failed to save session: %s", out);
+}
+
+void MainWindow::load_session() {
+    const char *path = fl_file_chooser("Load session", "*.json", nullptr);
+    if (!path) return;
+
+    char errmsg[256] = "";
+    int pad_slots[16] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+    int pad_st[16]    = {};
+
+    if (session_load(path, pad_slots, pad_st, 16, errmsg, sizeof(errmsg)) != 0) {
+        fl_alert("Failed to load session:\n%s", errmsg);
+        return;
+    }
+
+    PadGrid *g = pad_win_->grid();
+    for (int i = 0; i < 16; i++)
+        g->set_pad(i, pad_slots[i], pad_st[i]);
+
+    strip_->refresh_all();
+    pad_win_->redraw();
+}
+
+void MainWindow::menu_save_session_cb(Fl_Widget*, void *ud) { ((MainWindow*)ud)->save_session(); }
+void MainWindow::menu_load_session_cb(Fl_Widget*, void *ud) { ((MainWindow*)ud)->load_session(); }

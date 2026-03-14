@@ -1,6 +1,5 @@
 #include "PadWindow.h"
 #include "PadGrid.h"
-#include "../theme.h"
 #include <FL/Fl.H>
 #include <FL/Fl_Button.H>
 
@@ -31,11 +30,11 @@ PadWindow::PadWindow()
 
 void PadWindow::draw() {
     /* Colours from T */
-    color(T.bg);
-    btn_drum_->color(melodic_mode_ ? T.btn    : T.accent);
-    btn_drum_->labelcolor(melodic_mode_ ? T.muted : T.bg);
-    btn_mel_->color(melodic_mode_  ? T.accent : T.btn);
-    btn_mel_->labelcolor(melodic_mode_  ? T.bg    : T.muted);
+    color(fl_rgb_color(0xe8,0xe8,0xe8));
+    btn_drum_->color(melodic_mode_ ? fl_rgb_color(0xe8,0xe8,0xe8)    : fl_rgb_color(0x00,0x78,0xd7));
+    btn_drum_->labelcolor(melodic_mode_ ? fl_rgb_color(0x70,0x70,0x70) : fl_rgb_color(0xe8,0xe8,0xe8));
+    btn_mel_->color(melodic_mode_  ? fl_rgb_color(0x00,0x78,0xd7) : fl_rgb_color(0xe8,0xe8,0xe8));
+    btn_mel_->labelcolor(melodic_mode_  ? fl_rgb_color(0xe8,0xe8,0xe8)    : fl_rgb_color(0x70,0x70,0x70));
     Fl_Double_Window::draw();
 }
 

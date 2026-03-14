@@ -21855,3 +21855,651 @@ events:
       CMAKE_SYSTEM_INCLUDE_PATH:
         - "/usr/include/X11"
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_1cd5d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_1cd5d.dir/build.make CMakeFiles/cmTC_1cd5d.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_1cd5d.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_1cd5d.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_1cd5d
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1cd5d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_1cd5d.dir/pthread_mutex_recursive.c.o -o cmTC_1cd5d
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c56ac/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c56ac.dir/build.make CMakeFiles/cmTC_c56ac.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_c56ac.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_c56ac.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_c56ac
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c56ac.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_c56ac.dir/pthread_mutex_recursive.c.o -o cmTC_c56ac
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9842c/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9842c.dir/build.make CMakeFiles/cmTC_9842c.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9842c.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_9842c.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_9842c
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9842c.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_9842c.dir/pthread_mutex_recursive.c.o -o cmTC_9842c
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bd51b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bd51b.dir/build.make CMakeFiles/cmTC_bd51b.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_bd51b.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_bd51b.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_bd51b
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd51b.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_bd51b.dir/pthread_mutex_recursive.c.o -o cmTC_bd51b
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a3e7b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a3e7b.dir/build.make CMakeFiles/cmTC_a3e7b.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_a3e7b.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_a3e7b.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_a3e7b
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3e7b.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_a3e7b.dir/pthread_mutex_recursive.c.o -o cmTC_a3e7b
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "vendor/fltk/CMake/resources.cmake:149 (try_compile)"
+      - "vendor/fltk/CMakeLists.txt:73 (include)"
+    directories:
+      source: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+      binary: "/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/stewartj/book/ks2/vendor/fltk/CMake"
+    buildResult:
+      variable: "HAVE_PTHREAD_MUTEX_RECURSIVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_39864/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_39864.dir/build.make CMakeFiles/cmTC_39864.dir/build
+        gmake[1]: Entering directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_39864.dir/pthread_mutex_recursive.c.o
+        /usr/bin/cc   -std=gnu11 -o CMakeFiles/cmTC_39864.dir/pthread_mutex_recursive.c.o -c /home/stewartj/book/ks2/vendor/fltk/CMake/pthread_mutex_recursive.c
+        Linking C executable cmTC_39864
+        /home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39864.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_39864.dir/pthread_mutex_recursive.c.o -o cmTC_39864
+        gmake[1]: Leaving directory '/home/stewartj/book/ks2/build/vendor/fltk/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "vendor/fltk/CMake/options.cmake:658 (find_file)"
+      - "vendor/fltk/CMakeLists.txt:78 (include)"
+    mode: "file"
+    variable: "HAVE_GL_GLU_H"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "GL/glu.h"
+    candidate_directories:
+      - "/home/stewartj/go/bin/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/"
+      - "/home/stewartj/.local/bin/"
+      - "/home/stewartj/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/include/"
+      - "/usr/local/"
+      - "/usr/include/"
+      - "/usr/"
+      - "/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/include/"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/"
+      - "/opt/include/"
+      - "/opt/"
+      - "/usr/include/X11/"
+      - "/usr/include/"
+    searched_directories:
+      - "/home/stewartj/go/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin/GL/glu.h"
+      - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin/GL/glu.h"
+      - "/home/stewartj/.local/bin/GL/glu.h"
+      - "/home/stewartj/bin/GL/glu.h"
+      - "/usr/local/bin/GL/glu.h"
+      - "/usr/bin/GL/glu.h"
+      - "/usr/local/include/GL/glu.h"
+      - "/usr/local/GL/glu.h"
+    found: "/usr/include/GL/glu.h"
+    search_context:
+      ENV{PATH}:
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/go/bin"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64/bin"
+        - "/home/stewartj/.local/share/mise/installs/zig/0.13.0/bin"
+        - "/home/stewartj/.local/bin"
+        - "/home/stewartj/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/stewartj/.local/share/mise/installs/cmake/4.2.3/cmake-4.2.3-linux-x86_64"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
