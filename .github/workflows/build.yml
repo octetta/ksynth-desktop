@@ -88,7 +88,7 @@ jobs:
   # ── macOS x86_64 (Intel) ─────────────────────────────────────────────
   macos-x86_64:
     name: macos x86_64
-    runs-on: macos-13        # Intel — runner availability may vary; best-effort
+    runs-on: macos-14        # Intel — runner availability may vary; best-effort
     continue-on-error: true  # don't block release if Intel runner is unavailable
     timeout-minutes: 60      # bail out rather than queue forever
 
