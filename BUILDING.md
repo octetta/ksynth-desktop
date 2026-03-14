@@ -102,18 +102,30 @@ Binaries: `build\Release\ksynth-desktop.exe` and `build\Release\ksplay.exe`.
 
 ### with zig cc
 
-[Zig](https://ziglang.org/download/) bundles a clang-compatible C/C++ compiler that works well as a drop-in. Install Zig, then:
+[Zig](https://ziglang.org/download/) bundles a clang-compatible C/C++ compiler that works well as a drop-in. This approach requires neither Visual Studio nor MinGW — just Zig and Ninja.
+
+Install Zig (from [ziglang.org](https://ziglang.org/download/) or `winget install zig.zig`) and Ninja:
+
+```cmd
+winget install Ninja-build.Ninja
+```
+
+Then:
 
 ```cmd
 git clone https://github.com/octetta/ksynth-desktop
 cd ksynth-desktop
 mkdir build
 cd build
-cmake .. -DCMAKE_C_COMPILER="zig cc" -DCMAKE_CXX_COMPILER="zig c++"
-cmake --build . --config Release
+cmake .. -G Ninja -DCMAKE_C_COMPILER="zig cc" -DCMAKE_CXX_COMPILER="zig c++"
+cmake --build .
 ```
 
-Audio uses the Windows Multimedia API (WinMM) automatically on both paths.
+Binaries: `build\ksynth-desktop.exe` and `build\ksplay.exe`.
+
+Ninja is a single small executable with no installer side-effects. If `zig cc` is not on your PATH as a bare command, use the full path: `-DCMAKE_C_COMPILER="C:\path\to\zig.exe cc"` — note the space between the executable and `cc` is intentional, that is how zig exposes its C compiler frontend.
+
+Audio uses the Windows Multimedia API (WinMM) automatically on all three Windows build paths.
 
 ### with mingw-w64 (msys2)
 
