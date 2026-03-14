@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/stewartj/book/ks2/build/cmake_install.cmake",
+		"/home/stewartj/book/ks2/build/vendor/fltk/cmake_install.cmake",
+		"/home/stewartj/book/ks2/build/vendor/fltk/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
