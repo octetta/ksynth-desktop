@@ -87,7 +87,7 @@ jobs:
   # ── macOS x86_64 (Intel) ─────────────────────────────────────────────
   macos-x86_64:
     name: macos x86_64
-    runs-on: macos-13        # macos-13 runners are Intel
+    runs-on: macos-13        # Intel; if unavailable try macos-12
 
     steps:
       - uses: actions/checkout@v4
