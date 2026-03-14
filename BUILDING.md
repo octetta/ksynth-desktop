@@ -9,7 +9,7 @@
 | C++ compiler | C++17 (same versions) |
 | git | any recent version |
 
-FLTK and miniaudio are vendored. No other libraries need to be installed except for the platform audio and display dependencies listed below.
+FLTK, miniaudio, and ksynth are all vendored in the repository. No other libraries need to be installed except for the platform audio and display dependencies listed below.
 
 ---
 
@@ -27,7 +27,7 @@ sudo dnf install cmake gcc-c++ \
 Build:
 
 ```sh
-git clone --recurse-submodules https://github.com/octetta/ksynth-desktop
+git clone https://github.com/octetta/ksynth-desktop
 cd ksynth-desktop
 mkdir build && cd build
 cmake ..
@@ -36,7 +36,7 @@ make -j$(nproc)
 
 Binaries: `build/ksynth-desktop` and `build/ksplay`.
 
-Audio backend is selected at runtime via `miniaudio`'s auto-detection. On a modern Fedora system it will use PipeWire (via the PulseAudio compatibility layer) without any extra configuration. If audio fails to initialise, check that PipeWire or PulseAudio is running.
+Audio backend is selected at runtime via miniaudio's auto-detection. On a modern Fedora system it will use PipeWire (via the PulseAudio compatibility layer) without any extra configuration. If audio fails to initialise, check that PipeWire or PulseAudio is running.
 
 ---
 
@@ -70,7 +70,7 @@ brew install cmake
 Build:
 
 ```sh
-git clone --recurse-submodules https://github.com/octetta/ksynth-desktop
+git clone https://github.com/octetta/ksynth-desktop
 cd ksynth-desktop
 mkdir build && cd build
 cmake ..
@@ -83,12 +83,14 @@ Audio uses CoreAudio automatically. No extra packages needed.
 
 ## windows
 
+### with visual studio
+
 Install [Visual Studio 2022](https://visualstudio.microsoft.com/) with the **Desktop development with C++** workload, and [CMake](https://cmake.org/download/).
 
 In a **Developer Command Prompt**:
 
 ```cmd
-git clone --recurse-submodules https://github.com/octetta/ksynth-desktop
+git clone https://github.com/octetta/ksynth-desktop
 cd ksynth-desktop
 mkdir build
 cd build
@@ -98,7 +100,51 @@ cmake --build . --config Release
 
 Binaries: `build\Release\ksynth-desktop.exe` and `build\Release\ksplay.exe`.
 
-Audio uses the Windows Multimedia API (WinMM) automatically.
+### with zig cc
+
+[Zig](https://ziglang.org/download/) bundles a clang-compatible C/C++ compiler that works well as a drop-in. Install Zig, then:
+
+```cmd
+git clone https://github.com/octetta/ksynth-desktop
+cd ksynth-desktop
+mkdir build
+cd build
+cmake .. -DCMAKE_C_COMPILER="zig cc" -DCMAKE_CXX_COMPILER="zig c++"
+cmake --build . --config Release
+```
+
+Audio uses the Windows Multimedia API (WinMM) automatically on both paths.
+
+### with mingw-w64 (msys2)
+
+[MSYS2](https://www.msys2.org/) provides a MinGW-w64 toolchain with a Unix-like shell, which is the most straightforward way to get `gcc` and `make` on Windows.
+
+Install MSYS2, then open the **MSYS2 MinGW64** shell and install the required packages:
+
+```sh
+pacman -S mingw-w64-x86_64-gcc \
+          mingw-w64-x86_64-cmake \
+          mingw-w64-x86_64-ninja \
+          git
+```
+
+Build:
+
+```sh
+git clone https://github.com/octetta/ksynth-desktop
+cd ksynth-desktop
+mkdir build && cd build
+cmake .. -G Ninja
+ninja
+```
+
+Binaries: `build/ksynth-desktop.exe` and `build/ksplay.exe`.
+
+A few things to be aware of with MinGW:
+
+- **Runtime DLLs** — the binaries link against `libgcc_s_seh-1.dll`, `libstdc++-6.dll`, and `libwinpthread-1.dll` from the MinGW runtime. These are in your MSYS2 `mingw64/bin` directory. Either run the app from the MSYS2 shell (where they are on `PATH`), or copy them alongside the executable for distribution.
+- **Console window** — MinGW builds will open a console window behind the GUI by default. To suppress it, add `-mwindows` to the link flags in CMakeLists.txt, or use the Ninja/VS generator with a `WIN32` executable target.
+- **FLTK and WinSock** — FLTK pulls in `ws2_32` on Windows. CMake handles this automatically; no manual flag is needed.
 
 ---
 
@@ -118,22 +164,23 @@ Audio uses the Windows Multimedia API (WinMM) automatically.
 
 ---
 
-## vendored submodules
+## vendored libraries
 
-The `vendor/` directory contains:
+The `vendor/` directory contains everything needed to build:
 
 | Path | What it is |
 |------|-----------|
-| `vendor/fltk/` | FLTK 1.4 GUI toolkit (git submodule) |
+| `vendor/fltk/` | FLTK 1.4 GUI toolkit |
 | `vendor/miniaudio.h` | miniaudio single-header audio library |
 | `vendor/ksynth.c` | ksynth interpreter |
 | `vendor/ksynth.h` | ksynth API header |
 
-If you cloned without `--recurse-submodules`, initialise the FLTK submodule:
+`ksynth.c` and `ksynth.h` are checked in directly. If you need to update ksynth to a newer version from [octetta/k-synth](https://github.com/octetta/k-synth), replace those two files manually.
 
-```sh
-git submodule update --init --recursive
-```
+> **Note:** FLTK is included as a git submodule. A plain `git clone` is sufficient since the submodule is already initialised in the repository. If for any reason FLTK is missing from `vendor/fltk/`, run:
+> ```sh
+> git submodule update --init --recursive
+> ```
 
 ---
 
@@ -165,6 +212,6 @@ pulseaudio --check
 
 **FLTK configure errors on Linux** — ensure X11 development headers are installed. The error message will name the missing header.
 
-**`fatal error: FL/Fl.H: No such file or directory`** — FLTK submodule was not initialised. Run `git submodule update --init --recursive`.
+**`fatal error: FL/Fl.H: No such file or directory`** — FLTK submodule content is missing. Run `git submodule update --init --recursive`.
 
 **Wayland** — FLTK 1.4 runs on Wayland via XWayland automatically on most distributions. If you see rendering issues, set `GDK_BACKEND=x11` before launching.

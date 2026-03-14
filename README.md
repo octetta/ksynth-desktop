@@ -9,7 +9,7 @@ Sessions are compatible with [ksynth web](https://github.com/octetta/k-synth) â€
 ## quick start
 
 ```sh
-git clone --recurse-submodules https://github.com/octetta/ksynth-desktop
+git clone https://github.com/octetta/ksynth-desktop
 cd ksynth-desktop
 mkdir build && cd build
 cmake ..
