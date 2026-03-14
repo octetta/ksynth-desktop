@@ -297,3 +297,29 @@ void Notebook::fire_play(const float *s, int n){ if (play_cb_) play_cb_(s, n, pl
 void Notebook::fire_bank(int sl, const float *s, int n, const char *c) {
     if (bank_cb_) bank_cb_(sl, s, n, c, bank_ud_);
 }
+
+void Notebook::visit_cells(bool (*cb)(NbCell *cell, void *ud), void *ud) {
+    for (int i = 0; i < children(); i++) {
+        Fl_Widget *w = child(i);
+        if (w == &scrollbar || w == &hscrollbar) continue;
+        if (!cb((NbCell*)w, ud)) break;
+    }
+}
+
+std::vector<HistoryEntry> Notebook::get_history() const {
+    std::vector<HistoryEntry> out;
+    for (int i = 0; i < children(); i++) {
+        Fl_Widget *w = child(i);
+        if (w == &scrollbar || w == &hscrollbar) continue;
+        NbCell *cell = (NbCell*)w;
+        HistoryEntry h;
+        h.success   = cell->success_;
+        h.code      = cell->code_;
+        h.error     = "";
+        h.samples   = cell->wave_len_;
+        h.audio     = cell->wave_data_;
+        h.audio_len = cell->wave_len_;
+        out.push_back(h);
+    }
+    return out;
+}

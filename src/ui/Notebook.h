@@ -1,6 +1,7 @@
 #pragma once
 #include <FL/Fl_Scroll.H>
 #include <string>
+#include <vector>
 
 struct NotebookEntry {
     bool        success  = false;
@@ -9,6 +10,16 @@ struct NotebookEntry {
     int         samples  = 0;
     float      *floatData = nullptr;
     int         floatLen  = 0;
+};
+
+/* Snapshot of one cell for session save */
+struct HistoryEntry {
+    bool        success;
+    std::string code;
+    std::string error;
+    int         samples;
+    const float *audio;     /* points into cell — valid until cell is destroyed */
+    int         audio_len;
 };
 
 class NbCell;  /* forward — defined in Notebook.cpp */
@@ -28,6 +39,12 @@ public:
     void add_entry(const NotebookEntry &entry);
     void remove_cell(NbCell *cell);   /* called by NbCell delete button */
     void clear_all();
+
+    /* Iterate cells oldest-first; cb returns false to stop */
+    void visit_cells(bool (*cb)(NbCell *cell, void *ud), void *ud);
+
+    /* Return snapshot of all cells for session save */
+    std::vector<HistoryEntry> get_history() const;
 
     void on_copy_to(CopyToCB cb, void *ud) { copy_cb_=cb; copy_ud_=ud; }
     void on_play(PlayWaveCB cb, void *ud)  { play_cb_=cb; play_ud_=ud; }

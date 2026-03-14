@@ -18,6 +18,7 @@
 #include <cstring>
 #include <cmath>
 #include <string>
+#include <vector>
 
 static const int MENUBAR_H = 22;
 static const int STRIP_H   = 68;
@@ -271,7 +272,7 @@ void MainWindow::save_session() {
     char out[512]; strncpy(out, path, sizeof(out)-6); out[sizeof(out)-6] = '\0';
     if (!strstr(out, ".json")) strcat(out, ".json");
 
-    /* Collect pad config from pad window */
+    /* Collect pad config */
     int pad_slots[16], pad_st[16];
     PadGrid *g = pad_win_->grid();
     for (int i = 0; i < 16; i++) {
@@ -279,8 +280,29 @@ void MainWindow::save_session() {
         pad_st[i]    = g->pad_semitones(i);
     }
 
-    if (session_save(out, pad_slots, pad_st, 16) != 0)
+    /* Collect editor text */
+    const char *editor_text = editor_->code();
+
+    /* Collect notebook history */
+    auto history = notebook_->get_history();
+    std::vector<SessionEntry> entries;
+    entries.reserve(history.size());
+    for (const auto &h : history) {
+        SessionEntry e;
+        e.code      = h.code.c_str();
+        e.success   = h.success ? 1 : 0;
+        e.samples   = h.samples;
+        e.error     = h.error.c_str();
+        e.audio     = h.audio;
+        e.audio_len = h.audio_len;
+        entries.push_back(e);
+    }
+
+    if (session_save(out, editor_text, entries.data(), (int)entries.size(),
+                     pad_slots, pad_st, 16) != 0)
         fl_alert("Failed to save session: %s", out);
+
+    free((void*)editor_text);
 }
 
 void MainWindow::load_session() {
@@ -288,20 +310,40 @@ void MainWindow::load_session() {
     if (!path) return;
 
     char errmsg[256] = "";
-    int pad_slots[16] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    int pad_st[16]    = {};
+    SessionLoadResult r;
 
-    if (session_load(path, pad_slots, pad_st, 16, errmsg, sizeof(errmsg)) != 0) {
+    if (session_load(path, &r, errmsg, sizeof(errmsg)) != 0) {
         fl_alert("Failed to load session:\n%s", errmsg);
         return;
     }
 
+    /* Restore editor */
+    if (r.editor_text && *r.editor_text)
+        editor_->set_code(r.editor_text);
+
+    /* Restore notebook */
+    notebook_->clear_all();
+    for (int i = 0; i < r.history_count; i++) {
+        const SessionEntry *e = r.history + i;
+        NotebookEntry ne;
+        ne.success   = e->success;
+        ne.code      = e->code   ? e->code  : "";
+        ne.error     = e->error  ? e->error : "";
+        ne.samples   = e->samples;
+        ne.floatData = (float*)e->audio;   /* notebook copies this */
+        ne.floatLen  = e->audio_len;
+        notebook_->add_entry(ne);
+    }
+
+    /* Restore pads */
     PadGrid *g = pad_win_->grid();
     for (int i = 0; i < 16; i++)
-        g->set_pad(i, pad_slots[i], pad_st[i]);
+        g->set_pad(i, r.pad_slots[i], r.pad_semitones[i]);
 
     strip_->refresh_all();
     pad_win_->redraw();
+
+    session_load_free(&r);
 }
 
 void MainWindow::menu_save_session_cb(Fl_Widget*, void *ud) { ((MainWindow*)ud)->save_session(); }
