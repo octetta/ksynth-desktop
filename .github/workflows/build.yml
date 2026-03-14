@@ -26,7 +26,8 @@ jobs:
             cmake g++ \
             libx11-dev libxext-dev libxft-dev \
             libxinerama-dev libxcursor-dev libxrender-dev \
-            libfreetype-dev libfontconfig-dev
+            libfreetype-dev libfontconfig-dev \
+            libgl-dev
 
       - name: configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
