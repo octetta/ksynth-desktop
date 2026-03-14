@@ -1,1 +1,0 @@
-/usr/bin/cc -Wl,--dependency-file=CMakeFiles/ksplay.dir/link.d CMakeFiles/ksplay.dir/src/main.c.o CMakeFiles/ksplay.dir/src/engine.c.o CMakeFiles/ksplay.dir/src/audio.c.o -o ksplay  -lpthread -ldl -lm -lm
