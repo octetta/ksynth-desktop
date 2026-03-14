@@ -22,6 +22,14 @@ elseif(UNIX)
     set(PLATFORM_LIBS pthread dl m)
 endif()
 
+# ── compiler warning flags ────────────────────────────────────────────
+# GCC/Clang use -W flags; MSVC uses /wd flags — they are not compatible.
+if(MSVC)
+    set(WARN_FLAGS /W3 /wd4100 /wd4505)
+else()
+    set(WARN_FLAGS -Wall -Wno-unused-function)
+endif()
+
 # ── common sources (engine + audio, no FLTK) ────────────────────────
 set(CORE_SOURCES
     src/engine.c
@@ -41,7 +49,7 @@ target_link_libraries(ksplay PRIVATE ${PLATFORM_LIBS})
 if(UNIX)
     target_link_libraries(ksplay PRIVATE m)
 endif()
-target_compile_options(ksplay PRIVATE -Wall -Wno-unused-function)
+target_compile_options(ksplay PRIVATE ${WARN_FLAGS})
 
 # ── vendored FLTK 1.4 ────────────────────────────────────────────────
 set(FLTK_BUILD_TEST          OFF CACHE BOOL "" FORCE)
@@ -72,4 +80,4 @@ target_include_directories(ksynth-desktop PRIVATE
     ${CMAKE_SOURCE_DIR}/vendor/fltk
     ${CMAKE_BINARY_DIR}/vendor/fltk
 )
-target_compile_options(ksynth-desktop PRIVATE -Wall -Wno-unused-function)
+target_compile_options(ksynth-desktop PRIVATE ${WARN_FLAGS})
