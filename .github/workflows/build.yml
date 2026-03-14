@@ -88,7 +88,9 @@ jobs:
   # ── macOS x86_64 (Intel) ─────────────────────────────────────────────
   macos-x86_64:
     name: macos x86_64
-    runs-on: macos-12        # Intel
+    runs-on: macos-13        # Intel — runner availability may vary; best-effort
+    continue-on-error: true  # don't block release if Intel runner is unavailable
+    timeout-minutes: 60      # bail out rather than queue forever
 
     steps:
       - uses: actions/checkout@v4
@@ -179,6 +181,7 @@ jobs:
           name: ${{ github.ref_name }}
           draft: false
           prerelease: false
+          fail_on_unmatched_files: false   # ok if Intel macOS artifact is missing
           files: |
             artifacts/ksynth-desktop-linux-x86_64/ksynth-desktop-linux-x86_64.tar.gz
             artifacts/ksynth-desktop-macos-arm64/ksynth-desktop-macos-arm64.tar.gz
